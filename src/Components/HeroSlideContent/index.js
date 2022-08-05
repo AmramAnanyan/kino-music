@@ -1,0 +1,1 @@
+export { HeroSlideContent } from "./HeroSlideContent";

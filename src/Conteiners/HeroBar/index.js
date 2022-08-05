@@ -1,0 +1,2 @@
+export { HeroBar } from "./HeroBar";
+
