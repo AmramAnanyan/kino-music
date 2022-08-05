@@ -4,6 +4,7 @@ import { StyledHomePage } from './styled';
 import { useDispatch } from 'react-redux';
 import { fetchPopularMovies } from '../../redux/actions/asyncActions';
 import { HeroBar } from '../../Conteiners/HeroBar';
+import { HomeMoviesBar } from '../../Conteiners/HomeMoviesBar';
 
 
 const HomePage = () => {
@@ -16,7 +17,8 @@ const HomePage = () => {
   return (
       <StyledHomePage>
       <NavBar />
-      <HeroBar/>
+      <HeroBar />
+      <HomeMoviesBar />
     </StyledHomePage>
   )
 }

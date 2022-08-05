@@ -6,3 +6,10 @@ export function getPopularMovies(movies) {
         movies,
     }
 }
+
+export function getRecomendedMovies(recomendations) {
+    return {
+        type: ACTION_TYPES.GET_SUCCSES_RECOMENDED_MOVIES,
+        recomendations,
+    }
+}
