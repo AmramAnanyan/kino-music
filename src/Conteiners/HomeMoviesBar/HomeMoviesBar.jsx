@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux';
 import {  arrowLeft, arrowRight } from '../../assets/svg';
 import { MoveCart } from '../../Components/MoveCart';
-import { fetchRecomendedMovies } from '../../redux/actions/asyncActions';
 import { selectPopular } from '../../redux/actions/selectFunction';
 import { StyledHomeMoviesBar } from './styled';
 
@@ -11,24 +10,31 @@ const HomeMoviesBar = () => {
     firstIndex: 0,
     lastIndex:6,
  })
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchRecomendedMovies())
-  }, [])
   const recomendedMoves = useSelector(selectPopular);
-  console.log(recomendedMoves)
 
   function slideComeRight() {
-    setSlideIndex(({ firstIndex, lastIndex }) => ({
-      firstIndex: firstIndex + 1,
-      lastIndex:lastIndex+1,
-      }))
+    setSlideIndex(({ firstIndex, lastIndex }) => {
+      if (firstIndex >= 0 && lastIndex <= 20) {
+        return {
+          firstIndex: firstIndex + 1,
+          lastIndex:lastIndex + 1,
+        }
+      } else {
+        return slideIndex
+      }
+    })
   }
   function slideComeLeft() {
-    setSlideIndex(({ firstIndex, lastIndex }) => ({
-      firstIndex: firstIndex - 1,
-      lastIndex:lastIndex-1,
-      }))
+    setSlideIndex(({ firstIndex, lastIndex }) => {
+      if ((firstIndex > 0) && (lastIndex <= 21)) {
+        return {
+          firstIndex: firstIndex - 1,
+          lastIndex:lastIndex - 1,
+        }
+      } else {
+        return slideIndex
+      }
+    })
     }
 
   return (

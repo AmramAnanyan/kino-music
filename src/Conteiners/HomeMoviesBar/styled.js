@@ -53,9 +53,7 @@ export const StyledHomeMoviesBar = styled.section`
             cursor: pointer;
 
         }
-        .slideIcone:hover{
-            transform: rotateX(180deg);
-        }
+      
        
 
 `

@@ -13,3 +13,9 @@ export function getRecomendedMovies(recomendations) {
         recomendations,
     }
 }
+
+export function slideAction() {
+    return {
+        type:ACTION_TYPES.SLIDE_CONTROL
+    }
+}
