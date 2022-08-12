@@ -2,7 +2,9 @@ import { ACTION_TYPES } from "../../constants"
 
 const initalPopularMovies = {
     isFetching: false,
-    movies:[]
+    isModalOpen:false,
+    movies: [],
+    trailers:"",
 }
 
 export function moviesPopularReducer(state=initalPopularMovies, action) {
@@ -12,6 +14,19 @@ export function moviesPopularReducer(state=initalPopularMovies, action) {
             return {
                 ...state,
                 movies:[...action.movies.results]
+            }
+        case ACTION_TYPES.GET_SUCCSES_TRAILER:
+            if (action.trailers.results.length > 0) {
+                return {
+                    ...state,
+                    trailers:action.trailers.results[0].key
+                }
+            }
+            return state
+        case ACTION_TYPES.TOGGLE_MODAL:
+            return {
+                ...state,
+                isModalOpen:!state.isModalOpen,
             }
        
         default:

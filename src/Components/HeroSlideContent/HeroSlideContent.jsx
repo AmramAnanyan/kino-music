@@ -1,9 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { toggleModal } from '../../redux/actions/action';
+import { fetchPopularsTrailer } from '../../redux/actions/asyncActions';
 import { Button } from '../Button';
 
 import { StyledHeroContent } from './styled';
 
-const HeroSlideContent = ({title,imageSrc,overview}) => {
+const HeroSlideContent = ({ title, imageSrc, overview, movieId }) => {
+  const dispatch = useDispatch();
+  function handleTrailerButton(id) {
+    dispatch(fetchPopularsTrailer(id))
+    dispatch(toggleModal())
+  }
   return (
     <StyledHeroContent imageSrc={imageSrc}>
       <div className='container'>
@@ -14,7 +22,7 @@ const HeroSlideContent = ({title,imageSrc,overview}) => {
           </p>
           <div className='containerButtons' >
               <Button>Watch now</Button>
-              <Button color="goldenrod">Watch trailer</Button>
+              <Button color="goldenrod" onClick={()=>handleTrailerButton(movieId)}>Watch trailer</Button>
           </div>
         </div>
         <div className='slideCart'></div>

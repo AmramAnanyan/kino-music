@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch,useSelector } from 'react-redux';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import {  arrowLeft, arrowRight } from '../../assets/svg';
 import { MoveCart } from '../../Components/MoveCart';
 import { selectPopular } from '../../redux/actions/selectFunction';

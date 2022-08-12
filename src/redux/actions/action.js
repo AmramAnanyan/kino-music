@@ -14,8 +14,15 @@ export function getRecomendedMovies(recomendations) {
     }
 }
 
-export function slideAction() {
+export function getPopularTrailer(trailers) {
     return {
-        type:ACTION_TYPES.SLIDE_CONTROL
+        type: ACTION_TYPES.GET_SUCCSES_TRAILER,
+        trailers,
+    }
+}
+
+export function toggleModal() {
+    return {
+        type:ACTION_TYPES.TOGGLE_MODAL
     }
 }

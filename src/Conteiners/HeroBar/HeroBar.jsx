@@ -30,13 +30,14 @@ const HeroBar = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
         >
+          
           <div>
             {
               popularMovies.slice(0,8).map((movie) => {
                 return (
                   <div key={movie.id}>
                     <SwiperSlide>
-                      <HeroSlideContent title={movie.original_title} imageSrc={movie.backdrop_path} overview={movie.overview} />
+                      <HeroSlideContent title={movie.original_title} imageSrc={movie.backdrop_path} overview={movie.overview} movieId={movie.id} />
                     </SwiperSlide>
                     </div>
                ) 
