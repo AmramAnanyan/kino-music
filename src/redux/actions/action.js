@@ -39,3 +39,9 @@ export function toggleSearchModal() {
         type:ACTION_TYPES.SEARCH_MODAL_OPEN
     }
 }
+
+export function closeSearchModal() {
+    return {
+        type:ACTION_TYPES.CLOSE_SEARCH_MODAL
+    }
+}

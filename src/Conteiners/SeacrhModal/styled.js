@@ -35,7 +35,7 @@ export const StyledSearchModal = styled.div`
      
       width: 320px;
       height: 72px;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid #070707;
       display: flex;
       justify-content: space-between;
      
@@ -56,6 +56,18 @@ export const StyledSearchModal = styled.div`
     .searchTitle h5 {
         color: goldenrod;
        
+    }
+    .goPage{
+        width: inherit;
+        height: 48px;
+        background-color: black;
+        text-align: center;
+        font-size: 24px;
+        color: white;
+    }
+    .goPage img{
+       width: 42px;
+       height: 42px;
     }
     
 

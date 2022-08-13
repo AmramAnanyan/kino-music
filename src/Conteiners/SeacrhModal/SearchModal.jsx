@@ -1,19 +1,37 @@
-import React from 'react';
-import { createPortal } from 'react-dom';
-import { IMAGE_PATH } from '../../constants';
+import React, { useRef, useState } from 'react';
 import { StyledSearchImage, StyledSearchModal } from './styled';
-import { useSelector } from 'react-redux/es/exports';
+import { useSelector,useDispatch} from 'react-redux/es/exports';
 import { selectSearch } from '../../redux/actions/selectFunction';
+import useClickOutSide from '../../hooks/useClickOutside';
+import { closeSearchModal } from '../../redux/actions/action';
+import { anglesDown } from '../../assets/svg';
 
 
-const SearchModal = () => {
+const SearchModal = ({addPage}) => {
     const searchMovies = useSelector(selectSearch);
-    console.log(searchMovies)
+    const dispatch = useDispatch();
+    let [page, setPage] = useState(1);
+    console.log(searchMovies);
+    const ref = useRef(null);
+ 
+    const { clickOutSide } = useClickOutSide();
+
+    function handleOutSide() {
+        dispatch(closeSearchModal())
+    }
+    clickOutSide(ref, handleOutSide)
+    
+    function handleGoPage() {
+        setPage(page++)
+        addPage(page);
+        
+    }
+
   return (
       <StyledSearchModal >
           
              
-                  <div>
+                  <div ref={ref}>
                       {
                           searchMovies.movies.map(({ id,title,release_date,backdrop_path }) => {
                               return (
@@ -24,12 +42,16 @@ const SearchModal = () => {
                                           <h5 >{release_date}</h5>
                                           <a href="#" className="href">details</a>
                                       </div>
+                                     
                                   </div>
                               )
                               
                               
                           })
-                       }
+                     }
+                        <div className='goPage' >
+                            <img src={anglesDown} alt="" onClick={handleGoPage}  />
+                        </div>
                   </div>
        
         

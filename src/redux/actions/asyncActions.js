@@ -30,9 +30,9 @@ export function fetchPopularsTrailer(id) {
     }
     
 
-export function fetchSearchMovies(search) {
+export function fetchSearchMovies(search,page=1) {
     return (dispatch) => {
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}&language=en-US&page=${page}`)
             .then(response => response.json())
             .then(result=>dispatch(searchMovies(result)))
     }
