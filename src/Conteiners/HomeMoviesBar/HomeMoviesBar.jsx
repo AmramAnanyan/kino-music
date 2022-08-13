@@ -42,8 +42,8 @@ const HomeMoviesBar = () => {
       <h1>RECOMENDATIONS</h1>
       <div className='controlSlide'>
         <div className='buttonsSlide'>
-           <div onClick={slideComeLeft}><img src={arrowLeft} alt="" srcset="" className='slideIcone' /></div>
-           <div  onClick={slideComeRight}><img src={arrowRight} alt="" srcset="" className='slideIcone'/></div>
+           <div onClick={slideComeLeft}><img src={arrowLeft}  className='slideIcone' /></div>
+           <div  onClick={slideComeRight}><img src={arrowRight}  className='slideIcone'/></div>
         </div>
        
       </div>

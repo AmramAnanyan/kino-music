@@ -9,3 +9,11 @@ export function selectTrailerKey(state) {
 export function selectOpenModal(state) {
     return state.popularMovies.isModalOpen
 }
+
+export function selectSearch(state) {
+    return state.searchMovies
+}
+
+export function selectModalState(state) {
+    return state.searchMovies.isOpenModal
+}

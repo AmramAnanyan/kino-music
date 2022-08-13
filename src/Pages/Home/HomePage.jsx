@@ -6,7 +6,8 @@ import { fetchPopularMovies } from '../../redux/actions/asyncActions';
 import { HeroBar } from '../../Conteiners/HeroBar';
 import { HomeMoviesBar } from '../../Conteiners/HomeMoviesBar';
 import { TrailerModal } from '../../Components/TrailerModal';
-import { selectOpenModal, selectTrailerKey } from '../../redux/actions/selectFunction';
+import { selectOpenModal,selectTrailerKey } from '../../redux/actions/selectFunction';
+import { SearchModal } from '../../Conteiners/SeacrhModal';
 
 
 const HomePage = () => {
@@ -15,12 +16,13 @@ const HomePage = () => {
   console.log(trailerKey)
   const isOpenModal = useSelector(selectOpenModal);
 
+
   useEffect(() => {
     dispatch(fetchPopularMovies())
   },[])
 
   return (
-      <StyledHomePage>
+    <StyledHomePage>
       <NavBar />
       <HeroBar />
       <HomeMoviesBar />

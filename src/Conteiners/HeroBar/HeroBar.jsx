@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux/es/exports';
 import { selectPopular } from '../../redux/actions/selectFunction';
-
 import { HeroSlideContent } from '../../Components/HeroSlideContent/HeroSlideContent';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const HeroBar = () => {
 
   const popularMovies = useSelector(selectPopular);
-    console.log(popularMovies)
+
   return (
       <div>
            <>
@@ -32,12 +31,13 @@ const HeroBar = () => {
         >
           
           <div>
+        
             {
-              popularMovies.slice(0,8).map((movie) => {
+              popularMovies.slice(0,8).map((movie,index) => {
                 return (
                   <div key={movie.id}>
-                    <SwiperSlide>
-                      <HeroSlideContent title={movie.original_title} imageSrc={movie.backdrop_path} overview={movie.overview} movieId={movie.id} />
+                    <SwiperSlide key={index}>
+                      <HeroSlideContent  title={movie.original_title} imageSrc={movie.backdrop_path} overview={movie.overview} movieId={movie.id} />
                     </SwiperSlide>
                     </div>
                ) 

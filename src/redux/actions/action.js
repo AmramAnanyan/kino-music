@@ -26,3 +26,16 @@ export function toggleModal() {
         type:ACTION_TYPES.TOGGLE_MODAL
     }
 }
+
+export function searchMovies(movie) {
+    return {
+        type: ACTION_TYPES.SEARCH_MOVIES,
+        movie,
+    }
+}
+
+export function toggleSearchModal() {
+    return {
+        type:ACTION_TYPES.SEARCH_MODAL_OPEN
+    }
+}
