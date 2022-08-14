@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import photo1 from "../../assets/photo1.jpg"
 import { IMAGE_PATH, IMAGE_W500_PATH } from "../../constants";
 export const StyledMovieCart = styled.div`
     width: 340px;

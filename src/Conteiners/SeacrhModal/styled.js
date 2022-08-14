@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IMAGE_PATH } from "../../constants";
-
+import photo1 from "../../assets/photo1.png";
 
 export const StyledSearchModal = styled.div`
     width: 340px;
@@ -78,7 +78,7 @@ export const StyledSearchModal = styled.div`
 
 export const StyledSearchImage = styled.div`
     width: 120px;
-    background-image: url(${(props) => (IMAGE_PATH + props.image)});
+    background-image: url(${(props) => (props.image?(IMAGE_PATH + props.image):photo1)});
     background-size: contain;
     background-repeat: no-repeat;
 

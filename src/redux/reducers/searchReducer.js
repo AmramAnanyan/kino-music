@@ -9,10 +9,11 @@ const initialState = {
 export function searchReducer(state = initialState, action) {
     switch (action.type) {
         case ACTION_TYPES.SEARCH_MOVIES:
+            let newResult=action.movie.results?action.movie.results:[]
         console.log(action.movie)
             return {
                 ...state,
-                movies:[...action.movie.results]
+                movies:[...newResult]
             }
         case ACTION_TYPES.SEARCH_MODAL_OPEN: {
             return {

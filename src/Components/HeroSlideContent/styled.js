@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import backgroundPhot from "../../assets/photo1.jpg";
 import { IMAGE_PATH, IMAGE_W500_PATH } from "../../constants";
 export const StyledHeroContent = styled.main`
     width: 100%;

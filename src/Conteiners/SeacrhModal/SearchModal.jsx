@@ -5,12 +5,13 @@ import { selectSearch } from '../../redux/actions/selectFunction';
 import useClickOutSide from '../../hooks/useClickOutside';
 import { closeSearchModal } from '../../redux/actions/action';
 import { anglesDown } from '../../assets/svg';
+import { Link } from 'react-router-dom';
 
 
 const SearchModal = ({addPage}) => {
     const searchMovies = useSelector(selectSearch);
     const dispatch = useDispatch();
-    let [page, setPage] = useState(1);
+    let [page, setPage] = useState(2);
     console.log(searchMovies);
     const ref = useRef(null);
  
@@ -22,7 +23,11 @@ const SearchModal = ({addPage}) => {
     clickOutSide(ref, handleOutSide)
     
     function handleGoPage() {
-        setPage(page++)
+        setPage((page) => {
+            console.log(page)
+            page++
+            return page
+        })
         addPage(page);
         
     }
@@ -31,7 +36,8 @@ const SearchModal = ({addPage}) => {
       <StyledSearchModal >
           
              
-                  <div ref={ref}>
+          <div ref={ref}>
+              <div id='top'></div>
                       {
                           searchMovies.movies.map(({ id,title,release_date,backdrop_path }) => {
                               return (
@@ -40,7 +46,7 @@ const SearchModal = ({addPage}) => {
                                       <div className='searchTitle'>
                                           <h4 >{title}</h4>
                                           <h5 >{release_date}</h5>
-                                          <a href="#" className="href">details</a>
+                                          <Link to={`/details/${id}`}>details</Link>
                                       </div>
                                      
                                   </div>
@@ -50,7 +56,9 @@ const SearchModal = ({addPage}) => {
                           })
                      }
                         <div className='goPage' >
-                            <img src={anglesDown} alt="" onClick={handleGoPage}  />
+                            <a href="#top" >
+                                <img src={anglesDown} alt="" onClick={handleGoPage}  />
+                             </a> 
                         </div>
                   </div>
        
