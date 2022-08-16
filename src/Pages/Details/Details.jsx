@@ -6,6 +6,7 @@ import { fetchDetails } from '../../redux/actions/asyncActions';
 import { selectDetails } from '../../redux/actions/selectFunction';
 import { StyledCompany, StyledDetailsImage, StyledDetailsLogo, StyledDetailsPage, StyledRedSpane, StyledSpanHash } from './styled';
 import { NavBar } from "../../Components/Navbar/NavBar";
+import { Top } from '../../Components/Top';
 
 const Details = () => {
   const { id } = useParams();
@@ -32,7 +33,7 @@ const Details = () => {
           <div className='description'>
             <h1> <StyledRedSpane>Title:</StyledRedSpane>  {title} </h1>
             <h2> <StyledRedSpane>Popularity:</StyledRedSpane>  {popularity}</h2>
-            <h3> <StyledRedSpane>Budget:</StyledRedSpane>  {budget}</h3>
+            <h3> <StyledRedSpane>Budget:</StyledRedSpane>  {budget}$</h3>
             <h3> <StyledRedSpane> RealseDate:</StyledRedSpane> {release_date?.split("-").sort().join("-")}</h3>
             <p>{overview}</p>
             <StyledRedSpane>Genres: </StyledRedSpane>
@@ -56,7 +57,8 @@ const Details = () => {
           </div>
         </div>
         <div></div>
-        </div>
+      </div>
+      <Top />
     </StyledDetailsPage>
   )
 }

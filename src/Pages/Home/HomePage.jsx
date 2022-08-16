@@ -7,7 +7,7 @@ import { HeroBar } from '../../Conteiners/HeroBar';
 import { HomeMoviesBar } from '../../Conteiners/HomeMoviesBar';
 import { TrailerModal } from '../../Components/TrailerModal';
 import { selectOpenModal,selectTrailerKey } from '../../redux/actions/selectFunction';
-import { SearchModal } from '../../Conteiners/SeacrhModal';
+import { Top } from '../../Components/Top';
 
 
 const HomePage = () => {
@@ -29,7 +29,7 @@ const HomePage = () => {
       {
         (isOpenModal &&  <TrailerModal trailerKey={trailerKey} />)
       }
-     
+     <Top />
     </StyledHomePage>
   )
 }

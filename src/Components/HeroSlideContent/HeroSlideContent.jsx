@@ -27,7 +27,7 @@ const HeroSlideContent = ({ title, imageSrc, overview, movieId }) => {
               <Button color="goldenrod" onClick={()=>handleTrailerButton(movieId)}>Watch trailer</Button>
           </div>
         </div>
-        <div className='slideCart'></div>
+        <div className='slideCart' onClick={navigate}></div>
       </div>
     </StyledHeroContent>
   )
