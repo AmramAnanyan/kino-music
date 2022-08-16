@@ -17,3 +17,6 @@ export function selectSearch(state) {
 export function selectModalState(state) {
     return state.searchMovies.isOpenModal
 }
+export function selectDetails(state) {
+    return state.details
+}

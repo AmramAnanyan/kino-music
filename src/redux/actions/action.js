@@ -45,3 +45,10 @@ export function closeSearchModal() {
         type:ACTION_TYPES.CLOSE_SEARCH_MODAL
     }
 }
+
+export function getDetails(details) {
+    return {
+        type: ACTION_TYPES.GET_DETAILS,
+        details,
+    }
+}
