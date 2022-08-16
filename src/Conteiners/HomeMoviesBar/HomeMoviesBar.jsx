@@ -52,7 +52,7 @@ const HomeMoviesBar = () => {
           recomendedMoves.slice(slideIndex.firstIndex,slideIndex.lastIndex).map((movie) => {
             return (
               <div key={movie.id}>
-                <MoveCart imageSrc={movie.backdrop_path} title={movie.title} />
+                <MoveCart imageSrc={movie.backdrop_path} title={movie.title} id={movie.id} />
               </div>
               
             )
