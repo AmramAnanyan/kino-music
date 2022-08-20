@@ -20,3 +20,7 @@ export function selectModalState(state) {
 export function selectDetails(state) {
     return state.details
 }
+
+export function selectNowPlaing(state) {
+    return state.nowPlaying
+}

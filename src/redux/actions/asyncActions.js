@@ -1,5 +1,5 @@
 import { API_KEY } from "../../constants";
-import { getDetails, getPopularMovies, getPopularTrailer, searchMovies } from "./action";
+import { getDetails, getNowPlaying, getPopularMovies, getPopularTrailer, searchMovies } from "./action";
 
 export function fetchPopularMovies() {
     return (dispatch) => {
@@ -47,3 +47,13 @@ export function fetchDetails(id) {
     }
 }
    
+
+export function fetchNowPlaying(page = 2) {
+    console.log("feeeeetchhh")
+    return dispatch => {
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`)
+            .then((response) => response.json())
+            .then((result) => dispatch(getNowPlaying(result)))
+            .catch(console.log)
+    }
+}

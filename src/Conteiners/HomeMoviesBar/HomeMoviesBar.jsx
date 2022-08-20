@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
 import {  arrowLeft, arrowRight } from '../../assets/svg';
 import { MoveCart } from '../../Components/MoveCart';
-import { selectPopular } from '../../redux/actions/selectFunction';
 import { StyledHomeMoviesBar } from './styled';
 
-const HomeMoviesBar = () => {
+const HomeMoviesBar = ({recomendedMoves,header}) => {
   const [slideIndex, setSlideIndex] = useState({
     firstIndex: 0,
     lastIndex:6,
  })
-  const recomendedMoves = useSelector(selectPopular);
-
+  
   function slideComeRight() {
     setSlideIndex(({ firstIndex, lastIndex }) => {
       if (firstIndex >= 0 && lastIndex <= 20) {
@@ -38,8 +35,12 @@ const HomeMoviesBar = () => {
     }
 
   return (
-      <StyledHomeMoviesBar>
-      <h1>RECOMENDATIONS</h1>
+    <StyledHomeMoviesBar>
+      <h1>
+      <marquee width="60%" direction="right" height="100px" scrollamount="12">  {header}</marquee>
+       
+      </h1>
+     
       <div className='controlSlide'>
         <div className='buttonsSlide'>
            <div onClick={slideComeLeft}><img src={arrowLeft}  className='slideIcone' /></div>

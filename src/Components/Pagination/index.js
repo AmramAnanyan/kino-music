@@ -1,0 +1,1 @@
+export { Pgination } from "./Pgination";

@@ -52,3 +52,11 @@ export function getDetails(details) {
         details,
     }
 }
+
+export function getNowPlaying(movies) {
+    console.log(movies,"actioooooooon")
+    return {
+        type: ACTION_TYPES.GET_NOW_PLAYING,
+        movies
+    }
+}
